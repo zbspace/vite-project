@@ -2,7 +2,6 @@ import { createApp } from 'vue'
 import './styles/style.css'
 import 'tailwindcss/tailwind.css'
 import App from './App.vue'
-const a = 1
 
 const app = createApp(App)
 app.config.errorHandler = (err) => {
