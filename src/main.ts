@@ -1,12 +1,14 @@
-import { createApp } from "vue";
-import "./styles/style.css";
-import "tailwindcss/tailwind.css";
-import App from "./App.vue";
+import { createApp } from 'vue'
+import './styles/style.css'
+import 'tailwindcss/tailwind.css'
+import App from './App.vue'
+const a = 1
 
-const app = createApp(App);
+const app = createApp(App)
 app.config.errorHandler = (err) => {
   /* 处理错误 */
-};
-app.config.performance = true;
+  console.log(err)
+}
+app.config.performance = true
 // app.config.compilerOptions.comments = true;
-app.mount("#app");
+app.mount('#app')

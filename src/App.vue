@@ -1,15 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    123
+  </div>
 </template>
 
-<script setup lang="ts">
-import {
-  computed,
-  defineAsyncComponent,
-  onMounted,
-  provide,
-  reactive,
-  Ref,
-  ref,
-} from "vue";
-</script>
+<script setup lang="ts"></script>
