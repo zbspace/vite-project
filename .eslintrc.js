@@ -4,7 +4,7 @@ module.exports = {
     es2021: true
   },
   extends: [
-    'plugin:vue/vue3-strongly-recommended',
+    'plugin:vue/vue3-strongly-recommended', // vue3严格模式
     'standard-with-typescript'
   ],
   overrides: [
@@ -12,12 +12,11 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    parser: '@typescript-eslint/parser',
-    project: './tsconfig.json'
+    project: './tsconfig.json',
+    parser: '@typescript-eslint/parser'
   },
   plugins: [
-    'vue',
-    '@typescript-eslint'
+    'vue'
   ],
   rules: {
   }
