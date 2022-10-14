@@ -18,5 +18,13 @@ module.exports = {
     'vue'
   ],
   rules: {
+    '@typescript-eslint/triple-slash-reference': 'off'
+  },
+  // vue的全局api，添加之后就不在校验
+  globals: {
+    defineProps: 'readonly',
+    defineEmits: 'readonly',
+    defineExpose: 'readonly',
+    withDefaults: 'readonly'
   }
 }

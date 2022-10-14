@@ -11,7 +11,8 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["vite/client"] // 同vite-env第一行
   },
   "include": [
     "src/**/*.ts",
