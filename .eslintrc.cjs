@@ -18,7 +18,8 @@ module.exports = {
     'vue'
   ],
   rules: {
-    '@typescript-eslint/triple-slash-reference': 'off'
+    '@typescript-eslint/triple-slash-reference': 'off',
+    'vue/multi-word-component-names': 'off'// 关闭名称校验
   },
   // vue的全局api，添加之后就不在校验
   globals: {

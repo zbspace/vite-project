@@ -11,6 +11,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "pinia": "^2.0.23",
     "scss": "^0.2.4",
     "vite-plugin-md2vue": "^1.1.1",
     "vue": "^3.2.37",
