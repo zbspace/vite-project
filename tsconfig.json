@@ -12,6 +12,9 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "types": ["vite/client"] // 同vite-env第一行
   },
   "include": [
