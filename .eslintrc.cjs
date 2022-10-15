@@ -7,8 +7,6 @@ module.exports = {
     'plugin:vue/vue3-strongly-recommended', // vue3严格模式
     'standard-with-typescript'
   ],
-  overrides: [
-  ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -17,9 +15,21 @@ module.exports = {
   plugins: [
     'vue'
   ],
+  // 单独校验规则
+  overrides: [
+    {
+      files: ['src/api/**/*.ts'],
+      rules: {
+        camelcase: 'off' // 文件名驼峰限制
+      }
+    }
+  ],
+  // 全局验证规则
   rules: {
     '@typescript-eslint/triple-slash-reference': 'off',
-    'vue/multi-word-component-names': 'off'// 关闭名称校验
+    'vue/multi-word-component-names': 'off', // 关闭名称校验
+    '@typescript-eslint/strict-boolean-expressions': 'off',
+    'dot-notation': 'off'
   },
   // vue的全局api，添加之后就不在校验
   globals: {
