@@ -1,9 +1,9 @@
 import { createApp } from 'vue'
-// import './styles/style.css'
-// import 'tailwindcss/tailwind.css'
+import '@/styles/iconfont/iconfont.css'
 import App from './App.vue'
 import router from './router'
 import { createPinia } from 'pinia'
+import ElementPlus from './plugins/element-plus'
 
 // 加载全局样式
 import './styles/index.scss'
@@ -17,4 +17,4 @@ app.config.errorHandler = (err) => {
 }
 app.config.performance = true
 // app.config.compilerOptions.comments = true;
-app.use(router).use(pinia).mount('#app')
+app.use(router).use(pinia).use(ElementPlus).mount('#app')

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import axios, { AxiosRequestConfig } from 'axios'
 const request = axios.create({
-  baseURL: 'https://shop.fed.lagounews.com/api/admin/' // 基础路径 https://shop.fed.lagounews.com/
+  baseURL: import.meta.env.VITE_API_BASEURL // 基础路径 https://shop.fed.lagounews.com/
 })
 // 请求拦截器
 request.interceptors.request.use(

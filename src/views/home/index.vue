@@ -1,13 +1,21 @@
 <template>
   <div class="">
     <h4>首页</h4>
-    {{ piniaStore.name }}
+    {{ userStore.name }}
+    {{ title }}
+    <el-button
+      type="primary"
+      size="default"
+    >
+      123
+    </el-button>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { useCounterStore } from '../../store'
-const piniaStore = useCounterStore()
+import { store } from '../../store'
+const userStore = store()
+const title = import.meta.env.VITE_APP_TITLE
 </script>
 
 <style lang="scss" scoped>

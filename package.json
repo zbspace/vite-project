@@ -5,6 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:sit": "vite --mode sit",
+    "dev:uat": "vite --mode uat",
+    "build:sit": "vue-tsc --noEmit && vite build --mode sit",
+    "build:uat": "vue-tsc --noEmit && vite build --mode uat",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint": "eslint ./src/**/*.{js,vue,ts} --fix",
@@ -12,6 +16,7 @@
   },
   "dependencies": {
     "axios": "^1.1.2",
+    "element-plus": "^2.2.18",
     "pinia": "^2.0.23",
     "scss": "^0.2.4",
     "vite-plugin-md2vue": "^1.1.1",
