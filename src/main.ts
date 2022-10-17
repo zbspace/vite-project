@@ -1,5 +1,4 @@
 import { createApp } from 'vue'
-import '@/styles/iconfont/iconfont.css'
 import App from './App.vue'
 import router from './router'
 import { createPinia } from 'pinia'
@@ -16,5 +15,4 @@ app.config.errorHandler = (err) => {
   console.log('error--->', err)
 }
 app.config.performance = true
-// app.config.compilerOptions.comments = true;
 app.use(router).use(pinia).use(ElementPlus).mount('#app')
