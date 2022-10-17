@@ -5,15 +5,16 @@ module.exports = {
   },
   extends: [
     'plugin:vue/vue3-strongly-recommended', // vue3严格模式
-    'standard-with-typescript'
+    'standard'
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: './tsconfig.json'
+    ecmaVersion: 12,
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module'
   },
   plugins: [
-    'vue'
+    'vue',
+    '@typescript-eslint'
   ],
   // 单独校验规则
   overrides: [

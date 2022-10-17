@@ -72,17 +72,25 @@
 </template>
 
 <script lang="ts" setup>
-import { getCaptcha } from '@/api/common'
+import { getCaptcha, login } from '@/api/common'
+import router from '@/router'
+import { useStore } from '@/store'
+import type { IElForm, IFormRule } from '@/type/element-plus'
+import { ElForm } from 'element-plus'
 import { onMounted, reactive, ref } from 'vue'
+import { useRoute } from 'vue-router'
 
+const route = useRoute()
+const userStore = useStore()
 const captchaSrc = ref('')
+const form = ref<IElForm | null>(null)
 const user = reactive({
   account: 'admin',
   pwd: '123456',
   imgcode: ''
 })
 const loading = ref(false)
-const rules = ref({
+const rules = ref<IFormRule>({
   account: [
     { required: true, message: '请输入账号', trigger: 'change' }
   ],
@@ -95,7 +103,33 @@ const rules = ref({
 })
 
 const handleSubmit = async () => {
-  console.log('handleSubmit')
+  // 表单验证
+  const valid = await form.value?.validate()
+  if (!valid) {
+    return false
+  }
+
+  // 验证通过，展示 loading
+  loading.value = true
+
+  // 请求登录
+  const data = await login(user).finally(() => {
+    loading.value = false
+  })
+  router.replace({ name: 'home' })
+
+  // 存储登录用户信息
+  userStore.setUserInfo({
+    ...(data as any).user_info,
+    token: data.token
+  })
+
+  // 跳转回原来页面
+  let redirect = route.query.redirect || '/'
+  if (typeof redirect !== 'string') {
+    redirect = '/'
+  }
+  router.replace(redirect)
 }
 
 const loadCaptcha = async () => {

@@ -1,17 +1,8 @@
+import { IUserInfo } from '@/api/types/common'
+import { USER } from '@/utils/constants'
+import { getItem, setItem } from '@/utils/storage'
 import { defineStore } from 'pinia'
-import { computed, ref } from 'vue'
-// options api
-// export const useStore = defineStore('counter', {
-//   state: () => ({ count: 0, name: 'Eduardo', isCollapse: 'el-icon-s-fold' }),
-//   getters: {
-//     doubleCount: (state) => state.count * 2
-//   },
-//   actions: {
-//     increment () {
-//       this.count++
-//     }
-//   }
-// })
+import { ref } from 'vue'
 
 export const collapseStore = defineStore('collapse', () => {
   const isCollapse = ref<boolean>(false)
@@ -21,13 +12,14 @@ export const collapseStore = defineStore('collapse', () => {
   return { isCollapse, changeCollapse }
 })
 
-// composition api
-export const store = defineStore('user', () => {
-  const count = ref(0)
-  const name = ref('Eduardo')
-  const doubleCount = computed(() => count.value * 2)
-  function increment (): void {
-    count.value++
+export const useStore = defineStore('user', {
+  state: () => ({
+    userInfo: getItem(USER) as IUserInfo | null
+  }),
+  actions: {
+    setUserInfo (userInfo : IUserInfo | null) {
+      this.userInfo = userInfo
+      setItem(USER, userInfo)
+    }
   }
-  return { count, name, doubleCount, increment }
 })

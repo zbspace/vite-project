@@ -15,4 +15,4 @@ app.config.errorHandler = (err) => {
   console.log('error--->', err)
 }
 app.config.performance = true
-app.use(router).use(pinia).use(ElementPlus).mount('#app')
+app.use(pinia).use(router).use(ElementPlus).mount('#app')
