@@ -22,6 +22,7 @@ export interface Admin {
  is_del:number
  _add_time:string
  _last_time:string
+ statusLoading?:boolean
 }
 
 export interface IAdminPostData {
