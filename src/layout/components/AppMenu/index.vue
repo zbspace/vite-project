@@ -65,24 +65,60 @@
         <el-icon><location /></el-icon>
         <span>设置</span>
       </template>
-      <el-menu-item index="/permission/role">
-        <el-icon><location /></el-icon>
+      <!-- <el-menu-item index="/permission/role">
         <template #title>
-          1
+          系统设置
         </template>
       </el-menu-item>
       <el-menu-item index="/permission/admin">
-        <el-icon><location /></el-icon>
         <template #title>
-          2
+          一号通
         </template>
-      </el-menu-item>
-      <el-menu-item index="/permission/rule">
-        <el-icon><location /></el-icon>
+      </el-menu-item> -->
+      <el-sub-menu index="4-1">
         <template #title>
-          3
+          <el-icon><location /></el-icon>
+          <span>权限管理</span>
         </template>
-      </el-menu-item>
+        <el-menu-item index="/permission/admin">
+          <template #title>
+            <el-icon><Menu /></el-icon>
+            管理员
+          </template>
+        </el-menu-item>
+        <el-menu-item index="/permission/role">
+          <template #title>
+            <el-icon><Menu /></el-icon>
+            角色
+          </template>
+        </el-menu-item>
+        <el-menu-item index="/permission/rule">
+          <template #title>
+            <el-icon><Menu /></el-icon>
+            规则
+          </template>
+        </el-menu-item>
+      </el-sub-menu>
+      <!-- <el-sub-menu index="4-2">
+        <template #title>
+          <span>&emsp;发货设置</span>
+        </template>
+        <el-menu-item index="/permission/admin">
+          <template #title>
+            &emsp;角色管理
+          </template>
+        </el-menu-item>
+        <el-menu-item index="/permission/admin">
+          <template #title>
+            &emsp;管理员列表
+          </template>
+        </el-menu-item>
+        <el-menu-item index="/permission/admin">
+          <template #title>
+            &emsp;权限规则
+          </template>
+        </el-menu-item>
+      </el-sub-menu> -->
     </el-sub-menu>
     <!-- 权限 -->
     <el-sub-menu index="5">
@@ -90,7 +126,7 @@
         <el-icon><location /></el-icon>
         <span>权限</span>
       </template>
-      <el-menu-item index="/permission/role">
+      <!-- <el-menu-item index="/permission/role">
         <el-icon><location /></el-icon>
         <template #title>
           1
@@ -107,7 +143,7 @@
         <template #title>
           3
         </template>
-      </el-menu-item>
+      </el-menu-item> -->
     </el-sub-menu>
   </el-menu>
 </template>
