@@ -22,11 +22,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import type { PropType } from 'vue'
-import type { IElDialog } from '@/types/element-plus'
-
-// interface EmitsType {
-//   (e: 'confirm'): void
-// }
+import type { IElDialog } from '@/type/element-plus'
 
 // const emit = defineEmits<EmitsType>()
 const props = defineProps({
