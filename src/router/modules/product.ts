@@ -41,8 +41,15 @@ const routes: RouteRecordRaw = {
       meta: {
         title: '商品规格'
       }
+    },
+    {
+      path: 'add_product',
+      name: 'product-add',
+      component: async () => await import('@/views/product/add/index.vue'),
+      meta: {
+        title: '添加商品'
+      }
     }
-
   ]
 }
 
