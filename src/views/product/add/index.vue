@@ -1,6 +1,6 @@
 <template>
   <page-container>
-    <app-card>
+    <AppCard>
       <template #header>
         <el-button
           icon="el-icon-back"
@@ -324,7 +324,7 @@
           </el-button>
         </el-form-item>
       </el-form>
-    </app-card>
+    </AppCard>
   </page-container>
 </template>
 
@@ -336,7 +336,7 @@ import type { IElForm } from '@/type/element-plus'
 import { ElMessage } from 'element-plus'
 import AttrTable from './AttrTable.vue'
 import AttrTemplate from './AttrTemplate.vue'
-import AttrEdit from './AttrEdit.vue'
+// import AttrEdit from './AttrEdit.vue'
 
 const attrTpl = ref<AttrRuleValue[]>([])
 

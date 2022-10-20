@@ -1,9 +1,10 @@
+<!-- eslint-disable vue/no-mutating-props -->
 <template>
   <el-form
     label-position="left"
     label-width="50px"
   >
-    <app-draggable
+    <AppDraggable
       v-model="props.modelValue"
       :options="{
         handle: '.el-icon-menu'
@@ -61,7 +62,7 @@
           </el-button>
         </div>
       </el-form-item>
-    </app-draggable>
+    </AppDraggable>
     <el-form-item v-if="!isAdd">
       <el-button
         type="primary"
@@ -110,7 +111,7 @@
     </el-form-item>
   </el-form>
 </template>
-
+<!-- eslint-disable vue/no-mutating-props -->
 <script lang="ts" setup>
 import { nextTick, ref } from 'vue'
 import type { PropType } from 'vue'

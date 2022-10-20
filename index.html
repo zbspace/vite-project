@@ -8,6 +8,22 @@
   </head>
   <body>
     <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <!-- <script type="module" src="/src/main.ts"></script> -->
+    <script>
+      document.addEventListener("plusready", function () {
+        function device(name) {
+          return plus.device.name;
+        }
+        alert(device("uuid"));
+
+        // console.log(device("imei"));
+
+        // console.log(device("model"));
+
+        // console.log(device("vendor"));
+
+        // console.log(device("imsi"));
+      });
+    </script>
   </body>
 </html>

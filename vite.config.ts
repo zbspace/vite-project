@@ -7,6 +7,9 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   envDir: './config', // 环境变量路径
+  server: {
+    host: '0.0.0.0'
+  },
   plugins: [
     vue(),
     eslintPlugin({
